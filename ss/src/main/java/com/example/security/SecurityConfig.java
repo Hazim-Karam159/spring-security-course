@@ -3,8 +3,10 @@ package com.example.security;
 import com.example.security.apikey.ApiKeyAuthenticationConfigurer;
 import com.example.security.passwordencoder.PasswordEncoderConfig;
 import com.example.security.rolehierarchy.RoleHierarchyConfig;
+import com.example.security.userdetailsservice.InMemoryUserDetailsServiceConfig;
 import com.example.security.userdetailsservice.jpa.JpaUserDetailsServiceConfig;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -13,12 +15,12 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-//@Configuration
+@Configuration
 @Import({
-//        InMemoryUserDetailsServiceConfig.class,
+        InMemoryUserDetailsServiceConfig.class,
         PasswordEncoderConfig.class,
-        RoleHierarchyConfig.class,
-        JpaUserDetailsServiceConfig.class,
+//        RoleHierarchyConfig.class,
+//        JpaUserDetailsServiceConfig.class,
 //        CorsConfig.class
 })
 @EnableMethodSecurity
